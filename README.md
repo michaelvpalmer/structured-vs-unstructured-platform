@@ -37,6 +37,11 @@ View all new logs real time by starting tailing mode to print out logs for all a
 ```bash
 $ cf logs [APP-NAME]
 ```
+![http://imgur.com/xBhqhxD](http://imgur.com/xBhqhxD)
+Clean up
+```bash
+$ cf delete [APP-NAME]
+```
 
 ##Deploying App to Kubernetes 
 Sign up for a  [Google Account](https://accounts.google.com/SignUp)
