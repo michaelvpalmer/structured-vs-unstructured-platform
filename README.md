@@ -19,7 +19,8 @@ Clone the repository to your local machine
 $ git clone https://github.com/cloudfoundry-samples/lattice-app
 ```
 Navigate to root of the applications directory that was just cloned  
-Example ```bash
+Example :
+```bash
 $ cd /lattice-app or cd C:/lattice-app
 ```
 Push to cloud foundry
@@ -136,13 +137,16 @@ $ gcloud container clusters delete my-kube-cluster
 ###Appendix:
 #####Pivotal Cloud Foundry
 * [Developer Guide](http://docs.pivotal.io/pivotalcf/devguide/index.html)  
-* [Getting Started](http://docs.pivotal.io/pivotalcf/getstarted/pcf-docs.html)  
+* [Getting Started](http://docs.pivotal.io/pivotalcf/getstarted/pcf-docs.html) 
+ 
 #####Kubernetes Documentation
 * [Kubernetes Home](http://kubernetes.io/)  
-* [kubectl](http://kubernetes.io/v1.0/docs/user-guide/kubectl/kubectl.html)  
+* [kubectl](http://kubernetes.io/v1.0/docs/user-guide/kubectl/kubectl.html) 
+ 
 #####Docker
 * [Docker Home](https://www.docker.com/)  
 * [User Guide](https://docs.docker.com/userguide/)  
+
 #####Google Cloud Platform
 * [Before you begin](https://cloud.google.com/container-engine/docs/before-you-begin)  
 * [Hello Node](https://cloud.google.com/container-engine/docs/tutorials/hello-node)
