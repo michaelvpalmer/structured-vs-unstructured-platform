@@ -37,7 +37,7 @@ View all new logs real time by starting tailing mode to print out logs for all a
 ```bash
 $ cf logs [APP-NAME]
 ```
-![http://imgur.com/xBhqhxD](http://imgur.com/xBhqhxD)
+![http://imgur.com/xBhqhxD.png](http://imgur.com/xBhqhxD.png)  
 Clean up
 ```bash
 $ cf delete [APP-NAME]
