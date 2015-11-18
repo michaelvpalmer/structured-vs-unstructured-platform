@@ -37,7 +37,22 @@ View all new logs real time by starting tailing mode to print out logs for all a
 ```bash
 $ cf logs [APP-NAME]
 ```
-![http://imgur.com/xBhqhxD.png](http://imgur.com/xBhqhxD.png)  
+![http://imgur.com/xBhqhxD.png](http://imgur.com/xBhqhxD.png) 
+
+
+#####Create a MySQL Service
+Create the MySQL service
+```bash
+cf create-service [SERVICE] [SERVICE-TYPE] [SERVICE-NAME]
+```
+> Substitute [SERVICE-NAME] with a unique name you would like to give the service
+> Substitute [SERVICE] and [SERVICE-TYPE] with the desired service and type. Use $ cf marketplace for a complete list of services and service type's
+
+Bind the Service to the app
+```bash
+cf bs [APP-NAME] [SERVICE-NAME]
+```
+
 Clean up
 ```bash
 $ cf delete [APP-NAME]
@@ -133,6 +148,38 @@ $ kubectl get pods [ * Make note of the name of the pod running your application
 $ kubctl logs <name-of-the-pod> -c demo-app 
 ```
 
+#####Create a MySQL Service
+Create a persistent disk in Google Cloud
+```bash
+$ gcloud compute disks create --size=50GB --zone=us-east1-d mysql-disk
+```
+
+Download MySQL Yaml files to local repository
+```bash
+wget https://github.com/kubernetes/kubernetes/blob/master/examples/mysql-wordpress-pd/mysql.yaml?raw=true  -O mysql.yaml
+wget https://github.com/kubernetes/kubernetes/blob/master/examples/mysql-wordpress-pd/mysql-service.yaml?raw=true -O mysql-service.yaml
+```
+
+Change MySQL password
+```bash
+$ vim mysql.yaml
+```
+
+Start MySQL Pod
+```bash
+$ kubectl create -f mysql.yaml
+```
+
+Start MySQL Service
+```bash
+$ kubectl create -f mysql-service.yaml
+```
+
+Verify that MySQL instance is running 
+```bash
+$ kubectl logs mysql 
+```
+
 Clean Up
 ```bash
 $ kubectl delete services demo-app
@@ -146,7 +193,8 @@ $ gcloud container clusters delete my-kube-cluster
  
 #####Kubernetes Documentation
 * [Kubernetes Home](http://kubernetes.io/)  
-* [kubectl](http://kubernetes.io/v1.0/docs/user-guide/kubectl/kubectl.html) 
+* [kubectl](http://kubernetes.io/v1.0/docs/user-guide/kubectl/kubectl.html)
+* [Kubernetes MySQL](https://github.com/kubernetes/kubernetes/tree/master/examples/mysql-wordpress-pd)
  
 #####Docker
 * [Docker Home](https://www.docker.com/)  
